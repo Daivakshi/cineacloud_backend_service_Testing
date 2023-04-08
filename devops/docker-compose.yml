@@ -1,0 +1,13 @@
+version: '3.3'
+
+services:
+  cineacloud:
+    container_name: cineacloud-nestjs-app
+    restart: on-failure
+    image: $IMAGE_TAG
+    env_file:
+      - cineacloud-nest.env
+    ports:
+      - "4200:4200"
+    volumes:
+      - "./home/ubuntu/logs/cineacloud:/opt/cineacloud"
