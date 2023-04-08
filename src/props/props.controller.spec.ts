@@ -28,13 +28,13 @@ describe('PropsController', () => {
       await request(app.getHttpServer())
         .post('/users/login')
         .send({
-          email: 'test@cineacloud.com',
-          password: 'test123',
+          email: 'daivakshi@gmail.com',
+          password: 'password',
         })
         .then((res) => {
           token = res.body.data.token;
           expect(token).toBeDefined();
-        });
+      })
 
       return request(app.getHttpServer())
         .post('/props/create')
@@ -57,6 +57,7 @@ describe('PropsController', () => {
         });
     });
 
+    // ! test fails with a 500 internal server error, it should return a 401 unauthorized if no token is provided
     it('POST /props/create no token', async () => {
       return request(app.getHttpServer())
         .post('/props/create')
@@ -86,13 +87,13 @@ describe('PUT /props/update', () => {
       await request(app.getHttpServer())
         .post('/users/login')
         .send({
-          email: 'test@cineacloud.com',
-          password: 'test123',
+          email: 'daivakshi@gmail.com',
+          password: 'password',
         })
         .then((res) => {
           token = res.body.data.token;
           expect(token).toBeDefined();
-        });
+      })
 
       await request(app.getHttpServer())
         .post('/props/create')
@@ -107,7 +108,7 @@ describe('PUT /props/update', () => {
           cast: 'Arif',
           approved: true,
           acquired: false,
-          projectId: '61ba05c126e24366bc305d96',
+          projectId: '642a35fa67354f1cbfd14386',
         })
         .expect(200);
 
@@ -123,7 +124,7 @@ describe('PUT /props/update', () => {
           cast: 'Firnaas',
           approved: true,
           acquired: false,
-          projectId: '61ba05c126e24366bc305d96',
+          projectId: '642a35fa67354f1cbfd14386',
         })
         .expect(200)
         .then((res) => {
@@ -138,13 +139,13 @@ describe('PUT /props/update', () => {
       await request(app.getHttpServer())
         .post('/users/login')
         .send({
-          email: 'test@cineacloud.com',
-          password: 'test123',
+          email: 'daivakshi@gmail.com',
+          password: 'password',
         })
         .then((res) => {
           token = res.body.data.token;
           expect(token).toBeDefined();
-        });
+      })
 
       return request(app.getHttpServer())
         .post('/props?limit=10&page=1&offset=5&sort=cast&type=desc')
@@ -175,13 +176,13 @@ describe('PUT /props/update', () => {
       await request(app.getHttpServer())
         .post('/users/login')
         .send({
-          email: 'test@cineacloud.com',
-          password: 'test123',
+          email: 'daivakshi@gmail.com',
+          password: 'password',
         })
         .then((res) => {
           token = res.body.data.token;
           expect(token).toBeDefined();
-        });
+      })
 
       return request(app.getHttpServer())
         .post('/props/642b8d281bb699709bc9aee3')
@@ -212,13 +213,13 @@ describe('PUT /props/update', () => {
       await request(app.getHttpServer())
         .post('/users/login')
         .send({
-          email: 'test@cineacloud.com',
-          password: 'test123',
+          email: 'daivakshi@gmail.com',
+          password: 'password',
         })
         .then((res) => {
           token = res.body.data.token;
           expect(token).toBeDefined();
-        });
+      })
 
       return request(app.getHttpServer())
         .post('/props/remove/61c00265fc68e11c1873f92d')
@@ -249,13 +250,13 @@ describe('PUT /props/update', () => {
       await request(app.getHttpServer())
         .post('/users/login')
         .send({
-          email: 'test@cineacloud.com',
-          password: 'test123',
+          email: 'daivakshi@gmail.com',
+          password: 'password',
         })
         .then((res) => {
           token = res.body.data.token;
           expect(token).toBeDefined();
-        });
+      })
 
       return request(app.getHttpServer())
         .post('/props/invite')
@@ -299,13 +300,13 @@ describe('PUT /props/update', () => {
       await request(app.getHttpServer())
         .post('/users/login')
         .send({
-          email: 'test@cineacloud.com',
-          password: 'test123',
+          email: 'daivakshi@gmail.com',
+          password: 'password',
         })
         .then((res) => {
           token = res.body.data.token;
           expect(token).toBeDefined();
-        });
+      })
 
       return request(app.getHttpServer())
         .post('/props/remove/61c00265fc68e11c1873f92d')
@@ -336,13 +337,13 @@ describe('PUT /props/update', () => {
       await request(app.getHttpServer())
         .post('/users/login')
         .send({
-          email: 'test@cineacloud.com',
-          password: 'test123',
+          email: 'daivakshi@gmail.com',
+          password: 'password',
         })
         .then((res) => {
           token = res.body.data.token;
           expect(token).toBeDefined();
-        });
+      })
 
       return request(app.getHttpServer())
         .post('/props/remove-many')

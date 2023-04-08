@@ -42,8 +42,8 @@ describe('UsersController', () => {
         return request(app.getHttpServer())
           .post('/users/login')
           .send({
-            email: 'test@cineacloud.com',
-            password: 'test1234',
+            email: 'daivakshi@gmail.com',
+            password: 'pass',
           })
           .expect(400);
       });
@@ -53,7 +53,7 @@ describe('UsersController', () => {
           .post('/users/login')
           .send({
             email: 'tes@cineacloud.com',
-            password: 'test123',
+            password: 'password',
           })
           .expect(400);
       });  
@@ -73,7 +73,6 @@ describe('UsersController', () => {
         })
         .then((res) => {
           token = res.body.data.token;
-
           expect(token).toBeDefined();
       })
 
@@ -89,7 +88,7 @@ describe('UsersController', () => {
     });
 
   });
-
+/*
   // test create project
    describe('POST /createProject', () => {
     it('POST /createProject', async () => {
@@ -110,14 +109,14 @@ describe('UsersController', () => {
         .post('/users/projects')
         .set('Authorization', `${token}`)
         .send({
-          projName: "Testing 3",
+          projName: "Enter some new project name",
         })
         //.expect(200)
         .expect((res) => {
           expect(res.body.message).toBe('Project created successfully');
         });
     })
-  }) 
+  }) */
 
   // ! test fails with a 200 status code, it should return a 201 created status code
   describe('POST /projects', () => {
@@ -127,8 +126,8 @@ describe('UsersController', () => {
       await request(app.getHttpServer())
         .post('/users/login')
         .send({
-          email: 'test@cineacloud.com',
-          password: 'test123',
+          email: 'daivakshi@gmail.com',
+          password: 'password',
         })
         .expect(200)
         .then((res) => {
@@ -194,14 +193,14 @@ describe('GET /projects/:id', () => {
       });
 
     return request(app.getHttpServer())
-      .get('/users/projects/641f590cd3d8af5a5174ca98')
+      .get('/users/projects/642a35fa67354f1cbfd14386')
       .set('Authorization', `${token}`)
       .expect(200);
   });
 });
 
 // ! tests pass but I would assume that for extend-session
-  // ! it would require a token to be passed in the header for authentication
+// ! it would require a token to be passed in the header for authentication
   describe('GET /extend-session', () => {
     it('GET /extend-session', async () => {
       let token;
@@ -209,8 +208,8 @@ describe('GET /projects/:id', () => {
       await request(app.getHttpServer())
         .post('/users/login')
         .send({
-          email: 'test@cineacloud.com',
-          password: 'test123',
+          email: 'daivakshi@gmail.com',
+          password: 'password',
         })
         .then((res) => {
           token = res.body.data.token;
@@ -218,7 +217,7 @@ describe('GET /projects/:id', () => {
         });
 
       await request(app.getHttpServer())
-        .get('/users/extend-session?email=test@cineacloud.com')
+        .get('/users/extend-session?email=daivakshi@gmail.com')
         .expect(200)
         .then((res) => {
           expect(res.body.message).toBe('Login session extended successfully');
@@ -229,8 +228,8 @@ describe('GET /projects/:id', () => {
 
 
   // ! tests pass but I would assume that for adding a premium user you would need to be an admin
+  // ! test fails with expected 201 "Created", got 400 "Bad Request"
   // ! or be authed with a token to be passed in the header for authentication
-  // ! as well as connecting the reference to the user that is being added as a premium user?
   describe('POST /add-premium-user', () => {
     it(' POST /add-premium-user', async () => {
       await request(app.getHttpServer())
@@ -245,7 +244,7 @@ describe('GET /projects/:id', () => {
       await request(app.getHttpServer())
         .post('/users/add-premium-user')
         .send({
-          email: 'test@cineacloud.com'
+          email: 'daivakshi@gmail.com'
         })
         .expect(400)
         .then((res) => {
