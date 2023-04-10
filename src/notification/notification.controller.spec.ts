@@ -24,8 +24,8 @@ describe('NotificationController', () => {
       await request(app.getHttpServer())
         .post('/users/login')
         .send({
-          email: 'test@cineacloud.com',
-          password: 'test123',
+          email: 'daivakshi@gmail.com',
+          password: 'password',
         })
         .then((res) => {
           token = res.body.data.token;
@@ -52,8 +52,8 @@ describe('NotificationController', () => {
       await request(app.getHttpServer())
         .post('/users/login')
         .send({
-          email: 'test@cineacloud.com',
-          password: 'test123'
+          email: 'daivakshi@gmail.com',
+          password: 'password',
         })
         .then((res) => {
           token = res.body.data.token;

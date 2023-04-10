@@ -27,8 +27,8 @@ describe('MediasController', () => {
       await request(app.getHttpServer())
         .post('/users/login')
         .send({
-          email: 'test@cineacloud.com',
-          password: 'test123',
+          email: 'daivakshi@gmail.com',
+          password: 'password',
         })
         .expect(200)
         .then((res) => {
@@ -66,8 +66,8 @@ describe('MediasController', () => {
       await request(app.getHttpServer())
         .post('/users/login')
         .send({
-          email: 'test@cineacloud.com',
-          password: 'test123',
+          email: 'daivakshi@gmail.com',
+          password: 'password',
         })
         .expect(200)
         .then((res) => {
@@ -107,8 +107,8 @@ describe('MediasController', () => {
       await request(app.getHttpServer())
         .post('/users/login')
         .send({
-          email: 'test@cineacloud.com',
-          password: 'test123',
+          email: 'daivakshi@gmail.com',
+          password: 'password',
         })
         .expect(200)
         .then((res) => {
@@ -145,8 +145,8 @@ describe('MediasController', () => {
       await request(app.getHttpServer())
         .post('/users/login')
         .send({
-          email: 'test@cineacloud.com',
-          password: 'test123',
+          email: 'daivakshi@gmail.com',
+          password: 'password',
         })
         .expect(200)
         .then((res) => {
@@ -170,8 +170,8 @@ describe('MediasController', () => {
       await request(app.getHttpServer())
         .post('/users/login')
         .send({
-          email: 'test@cineacloud.com',
-          password: 'test123',
+          email: 'daivakshi@gmail.com',
+          password: 'password',
         })
         .expect(200)
         .then((res) => {
