@@ -33,11 +33,3 @@ $ npm run test:e2e
 
 # test coverage
 $ npm run test:cov
-
-## Stay in touch
-
-- Author - [Firnaas](https://linkedin.com/in/firnaas)
-```
-
-## Postman
-Please use this postman link to import postman collection [Link](https://api.postman.com/collections/6358631-bd0416ae-33b0-49ff-b84a-7772f6b3f6f4?access_key=PMAT-01GV0166TE5E4EGVQ7G0GF3ZH3). 
